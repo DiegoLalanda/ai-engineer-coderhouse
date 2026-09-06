@@ -1,0 +1,2 @@
+# Ejercicio de asyncio: solo biblioteca estándar de Python 3.12+.
+# No hay dependencias externas.
