@@ -120,6 +120,10 @@ Cambiar de proveedor es cambiar un string: `LLMConfig(provider="anthropic", mode
 
 ## Próximos pasos (fuera del alcance de esta pre-entrega)
 
+El siguiente ejercicio del curso (Módulo 2) refactoriza esta llamada al SDK crudo a una cadena LCEL: [refactorizacion-lcel-asincrono](../refactorizacion-lcel-asincrono).
+
+Mejoras posibles de este cliente, si se retoma más adelante:
+
 - Sumar reintentos con jitter y métricas de latencia agregadas.
 - Persistir el historial de `ChatMessage` para conversaciones multi-turno.
 - Extender `ModelResponse` con conteo de costos estimados por proveedor.
