@@ -1,0 +1,22 @@
+[
+  {
+    "pregunta": "¿Cómo se inicializa NimbusClient en Python para publicar en orders.created?",
+    "documento_id_esperado": "nimbus-client"
+  },
+  {
+    "pregunta": "¿Qué significa el código de error NQ-503 y cuándo hay que tratarlo como incidente?",
+    "documento_id_esperado": "nimbus-errores"
+  },
+  {
+    "pregunta": "¿Para qué sirve la variable NIMBUS_ACK_TIMEOUT y cuál es su valor por defecto?",
+    "documento_id_esperado": "nimbus-config"
+  },
+  {
+    "pregunta": "¿Cómo se reprocesa un mensaje de la DeadLetterQueue con replay_dlq?",
+    "documento_id_esperado": "nimbus-dlq"
+  },
+  {
+    "pregunta": "¿Cómo se llama el header HMAC y qué formato tiene X-Nimbus-Signature?",
+    "documento_id_esperado": "nimbus-seguridad"
+  }
+]

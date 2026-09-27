@@ -1,0 +1,27 @@
+PRE-ENTREGA 4 — EVIDENCIA DE RÚBRICA
+Carpeta: pre-entrega-4-rag-pinecone
+
+[PASS] 1. Pipeline de ingesta a Pinecone
+       ingest.py fragmenta el corpus, genera embeddings y hace upsert por lotes.
+[PASS] 2. Índice serverless, 1536 dimensiones y coseno
+       pinecone_index.py crea el índice solo si no existe y rechaza una dimensión distinta.
+[PASS] 3. Namespace y metadatos source, page y category
+       Namespace 'nimbus-docs'. Categorías: configuracion, errores, observabilidad, operaciones, sdk, seguridad. El texto original viaja en el metadato text.
+[PASS] 4. Chunking entre 500 y 800 tokens
+       chunk_size=600, overlap=80, chunks=12, máximo observado=574 tokens.
+[PASS] 5. Recuperador híbrido BM25 + Pinecone
+       RAGSystem combina BM25 (0.4) y Pinecone (0.6) con EnsembleRetriever, que fusiona por RRF.
+[PASS] 6. Golden set de 5 preguntas y evaluate.py
+       data/golden_set.json tiene 5 pares pregunta / documento_id_esperado. evaluate.py imprime ambas métricas.
+[PASS] 7. Fórmulas de Precision@5 y Recall@5
+       Dos aciertos de nimbus-errores entre 5 resultados dan Precision@5=0.40. Recall@5 es 1 o 0.
+[PASS] 8. BM25 recupera la fuente esperada
+       Recall@5 léxico sobre el golden set: 1, 1, 1, 1, 1. La corrida híbrida completa es python evaluate.py.
+[PASS] 9. Secretos fuera del repositorio
+       requirements.txt incluye pinecone, langchain y openai. .env.example no trae claves reales.
+[PASS] 10. README con los pasos para replicar el índice
+       README.md explica entorno, .env, creación del índice e ingesta.
+
+Resultado: 10/10 criterios verificados.
+Ingesta y evaluación híbrida contra Pinecone: completar .env y ejecutar
+python ingest.py y después python evaluate.py.

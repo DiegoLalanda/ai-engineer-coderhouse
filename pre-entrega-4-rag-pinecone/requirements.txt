@@ -1,0 +1,13 @@
+langchain>=1.0,<2.0
+langchain-classic>=1.0,<2.0
+langchain-community>=0.3,<1.0
+langchain-core>=1.0,<2.0
+langchain-openai>=1.0,<2.0
+langchain-pinecone>=0.2,<1.0
+langchain-text-splitters>=1.0,<2.0
+openai>=2.0,<4.0
+pinecone>=7,<8
+pydantic>=2.0,<3.0
+python-dotenv>=1.0,<2.0
+rank-bm25>=0.2,<1.0
+tiktoken>=0.8,<1.0

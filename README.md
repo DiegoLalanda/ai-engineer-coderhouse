@@ -15,6 +15,7 @@ Cada unidad vive en su propia carpeta, con su `README.md` y sus dependencias. El
 | [refactorizacion-lcel-asincrono](./refactorizacion-lcel-asincrono) | 2 · Encadenamiento lógico | Ejercicio | Cadena LCEL asíncrona: `ChatPromptTemplate \| ChatOpenAI \| StrOutputParser` con `ainvoke`. |
 | [pre-entrega-2-pipeline-validado](./pre-entrega-2-pipeline-validado) | 2 · Salidas estructuradas | Pre-entrega | Extracción técnica asíncrona con LCEL, Pydantic, structured output y reintentos de validación. |
 | [pre-entrega-3-rag-local](./pre-entrega-3-rag-local) | 2 · RAG y memoria vectorial | Pre-entrega | Ingesta incremental, ChromaDB persistente, retrieval local y generación grounded asíncrona con LCEL + Pydantic. |
+| [pre-entrega-4-rag-pinecone](./pre-entrega-4-rag-pinecone) | 4 · RAG en la nube | Pre-entrega | Índice Pinecone serverless, recuperador híbrido BM25 + vectores y evaluación Precision@5 / Recall@5. |
 
 Las próximas pre-entregas (LangChain, RAG, agentes, multi-agente, API de producción y el capstone) se irán sumando como carpetas hermanas, sin mezclar código entre actividades.
 
@@ -27,6 +28,7 @@ Si un corrector necesita **solo** una actividad, puede entrar directo a su carpe
 - Refactorización a LCEL asíncrono: [refactorizacion-lcel-asincrono](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/refactorizacion-lcel-asincrono)
 - Pre-entrega 2 — Pipeline validado: [pre-entrega-2-pipeline-validado](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-2-pipeline-validado)
 - Pre-entrega 3 — RAG local: [pre-entrega-3-rag-local](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-3-rag-local)
+- Pre-entrega 4 — RAG en Pinecone: [pre-entrega-4-rag-pinecone](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-4-rag-pinecone)
 
 La explicación de cómo correr cada una (variables de entorno, dependencias, comando de prueba) está en el `README.md` de esa carpeta. No hay informe aparte.
 
@@ -81,6 +83,17 @@ cd pre-entrega-3-rag-local
 copy .env.example .env
 python ingest.py
 python rag.py
+python verificar_rubrica.py
+```
+
+Para la pre-entrega 4 (RAG en Pinecone):
+
+```powershell
+pip install -r pre-entrega-4-rag-pinecone\requirements.txt
+cd pre-entrega-4-rag-pinecone
+copy .env.example .env
+python ingest.py
+python evaluate.py
 python verificar_rubrica.py
 ```
 
