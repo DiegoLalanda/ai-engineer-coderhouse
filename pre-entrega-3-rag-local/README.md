@@ -1,8 +1,47 @@
 # Pre-entrega 3: Sistema de recuperación semántica local (RAG)
 
-Curso **AI Engineer — Coderhouse**. Flujo End-to-End que ingesta documentos,
-los persiste en ChromaDB, recupera los fragmentos relevantes y genera una
-respuesta asíncrona basada exclusivamente en ese contexto.
+Curso **AI Engineer — Coderhouse**. Esta carpeta es la entrega completa.
+
+## Archivos exigidos por la consigna
+
+| Requisito | Archivo |
+| --- | --- |
+| 1. Script de ingesta (chunking + ChromaDB) | [ingest.py](./ingest.py) |
+| 2. Script de la cadena RAG asíncrona | [rag.py](./rag.py), función `get_rag_response(query: str)` |
+| 3. Dataset de ejemplo `.md` | [data/](./data) (4 manuales) |
+| 4. Instrucciones de ejecución | este `README.md` |
+| Dependencias | [requirements.txt](./requirements.txt): `langchain`, `chromadb`, `openai`, `pydantic` |
+| Configuración sin secretos | [.env.example](./.env.example); el `.env` real no se versiona |
+
+## Evidencia por criterio
+
+Desde esta carpeta, después de instalar las dependencias:
+
+```powershell
+python verificar_rubrica.py
+```
+
+El comando comprueba la rúbrica y guarda el resultado en
+[evidencia/verificacion.txt](./evidencia/verificacion.txt). Cubre ingesta,
+chunking de 500 tokens con overlap 50, persistencia, embeddings coincidentes,
+top-k, LCEL, `PydanticOutputParser`, el prompt «No lo sé.» y las dos preguntas.
+No usa la API de OpenAI.
+
+La generación grounded se evidencia con:
+
+```powershell
+copy .env.example .env
+# Completar OPENAI_API_KEY
+python ingest.py
+python rag.py
+```
+
+`python rag.py` ejecuta la pregunta respondible y la pregunta trampa, e imprime
+el JSON validado por `RAGResponse`.
+
+El flujo ingesta documentos, los persiste en ChromaDB, recupera los fragmentos
+relevantes y genera una respuesta asíncrona basada exclusivamente en ese
+contexto.
 
 El dataset describe la plataforma ficticia **AulaNova**. Incluye información
 sobre acceso, pagos, certificados y soporte técnico. Al usar datos ficticios y
@@ -23,6 +62,8 @@ pre-entrega-3-rag-local/
 ├── vector_store.py         # persistencia y CRUD de ChromaDB
 ├── ingest.py               # ingesta incremental del dataset
 ├── rag.py                  # retriever + LCEL async + salida Pydantic
+├── verificar_rubrica.py    # evidencia ejecutable de cada criterio
+├── evidencia/verificacion.txt
 ├── .env.example
 └── requirements.txt
 ```

@@ -121,6 +121,14 @@ def _is_unknown_answer(text: str) -> bool:
     return normalized in {"no lo sé", "no lo se"}
 
 
+PREGUNTA_CON_RESPUESTA = (
+    "¿Qué requisitos debo cumplir para obtener el certificado "
+    "y cuánto tarda en emitirse?"
+)
+PREGUNTA_TRAMPA = "¿Cuál es el menú vegetariano de la cafetería de AulaNova?"
+RESPUESTA_DESCONOCIDA = "No lo sé."
+
+
 async def get_rag_response(
     query: str,
     where: dict[str, Any] | None = None,
@@ -133,10 +141,6 @@ async def get_rag_response(
     """
     if not query.strip():
         raise ValueError("La pregunta no puede estar vacía.")
-    if not os.getenv("OPENAI_API_KEY"):
-        raise RuntimeError(
-            "Falta OPENAI_API_KEY. Copiá .env.example a .env y completá la clave."
-        )
 
     memory = VectorMemoryManager(
         persist_path=settings.persist_dir,
@@ -147,22 +151,25 @@ async def get_rag_response(
             "La colección está vacía. Ejecutá primero: python ingest.py"
         )
 
-    allowed_sources: set[str] = set()
+    results = await asyncio.to_thread(
+        memory.semantic_search,
+        query,
+        settings.top_k,
+        where,
+    )
+    context, allowed_sources = format_retrieved_context(
+        results,
+        settings.max_distance,
+    )
+    if not allowed_sources:
+        return RAGResponse(respuesta=RESPUESTA_DESCONOCIDA, referencias=[])
+
+    if not os.getenv("OPENAI_API_KEY"):
+        raise RuntimeError(
+            "Falta OPENAI_API_KEY. Copiá .env.example a .env y completá la clave."
+        )
 
     async def retrieve_and_format(question: str) -> dict[str, str]:
-        nonlocal allowed_sources
-        results = await asyncio.to_thread(
-            memory.semantic_search,
-            question,
-            settings.top_k,
-            where,
-        )
-        context, allowed_sources = format_retrieved_context(
-            results,
-            settings.max_distance,
-        )
-        if not context:
-            context = "No se recuperaron fragmentos para esta consulta."
         return {"question": question, "context": context}
 
     model = ChatOpenAI(
@@ -180,7 +187,7 @@ async def get_rag_response(
     # grounded, y nunca se propagan referencias inventadas por el modelo.
     if not allowed_sources or _is_unknown_answer(response.respuesta):
         return response.model_copy(
-            update={"respuesta": "No lo sé.", "referencias": []}
+            update={"respuesta": RESPUESTA_DESCONOCIDA, "referencias": []}
         )
 
     valid_references = list(
@@ -196,17 +203,8 @@ async def get_rag_response(
 async def run_demo() -> None:
     """Ejecuta la pregunta respondible y la pregunta trampa de la rúbrica."""
     cases = [
-        (
-            "Pregunta con respuesta",
-            "¿Qué requisitos debo cumplir para obtener el certificado "
-            "y cuánto tarda en emitirse?",
-            False,
-        ),
-        (
-            "Pregunta trampa",
-            "¿Cuál es el menú vegetariano de la cafetería de AulaNova?",
-            True,
-        ),
+        ("Pregunta con respuesta", PREGUNTA_CON_RESPUESTA, False),
+        ("Pregunta trampa", PREGUNTA_TRAMPA, True),
     ]
 
     for label, question, should_be_unknown in cases:

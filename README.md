@@ -81,6 +81,7 @@ cd pre-entrega-3-rag-local
 copy .env.example .env
 python ingest.py
 python rag.py
+python verificar_rubrica.py
 ```
 
 ## Autor

@@ -1,0 +1,35 @@
+PRE-ENTREGA 3 — EVIDENCIA DE RÚBRICA
+Carpeta: pre-entrega-3-rag-local
+
+[PASS] 1. Script de ingesta
+       ingest.py define ingest_documents(): lee data/, fragmenta y persiste.
+[PASS] 2. Script de la cadena RAG asíncrona
+       rag.py define async get_rag_response(query: str) y usa await chain.ainvoke().
+[PASS] 3. Dataset de ejemplo
+       data/: 01_acceso_y_seguridad.md, 02_facturacion_y_reembolsos.md, 03_certificados_y_evaluacion.md, 04_soporte_tecnico.md
+[PASS] 4. README con instrucciones de ejecución
+       README.md documenta el entorno virtual, .env, ingest.py y rag.py.
+[PASS] 5. Dependencias pedidas
+       requirements.txt incluye langchain, chromadb, openai y pydantic.
+[PASS] 6. Secretos fuera del repositorio
+       .env.example tiene un placeholder y .gitignore excluye .env.
+[PASS] 7. Chunking de mínimo 500 tokens y overlap 50
+       Configuración: chunk_size=500, chunk_overlap=50, encoding=cl100k_base. Tokens por archivo: 01_acceso_y_seguridad.md: [448, 439] | 02_facturacion_y_reembolsos.md: [448, 321] | 03_certificados_y_evaluacion.md: [425, 332] | 04_soporte_tecnico.md: [453, 419]
+[PASS] 8. ChromaDB persistente y embeddings coincidentes
+       PersistentClient en vectorstore/; encoder único: DefaultEmbeddingFunction; chunks persistidos: 8.
+[PASS] 9. No reindexa si la base ya existe
+       Segunda ingesta: 4/4 archivos sin cambios y 0 chunks reescritos.
+[PASS] 10. Retriever con top_k entre 3 y 5
+       RAG_TOP_K=4. La búsqueda usa el embedding de la pregunta.
+[PASS] 11. Cadena LCEL con PydanticOutputParser
+       Cadena: retriever | prompt | ChatOpenAI | PydanticOutputParser(RAGResponse).
+[PASS] 12. Prompt filtro de veracidad
+       El system prompt exige responder solo con el CONTEXTO o exactamente "No lo sé.".
+[PASS] 13. Pregunta cuya respuesta está en los documentos
+       Pregunta: ¿Qué requisitos debo cumplir para obtener el certificado y cuánto tarda en emitirse?. Fuentes recuperadas: 03_certificados_y_evaluacion.md, 02_facturacion_y_reembolsos.md
+[PASS] 14. Pregunta trampa ausente del corpus
+       Pregunta: ¿Cuál es el menú vegetariano de la cafetería de AulaNova?. Esa información no está en ningún documento. Distancias: 0.562, 0.5835, 0.6037, 0.6263. El prompt y el validador obligan a responder "No lo sé." con referencias vacías.
+
+Resultado: 14/14 criterios verificados.
+Generación con OpenAI: ejecutar `python rag.py` después de completar .env.
+Esa corrida hace las dos pruebas finales y muestra el JSON de RAGResponse.
