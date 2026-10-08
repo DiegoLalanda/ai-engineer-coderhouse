@@ -1,0 +1,44 @@
+Verificación local de la pre-entrega 5
+
+[OK] Estado hereda de MessagesState y acumula con add_messages
+    AgentState(MessagesState); messages usa add_messages
+[OK] La clase AgentState declara la herencia en el fuente
+    class AgentState(MessagesState)
+[OK] Grafo con nodo agent, ToolNode y tools_condition hacia END
+    START -> agent -> tools_condition -> tools -> agent, o END
+[OK] Persistencia SQLite asíncrona y recursion_limit
+    AsyncSqliteSaver.from_conn_string; SqliteSaver síncrono no sirve para ainvoke
+[OK] Herramientas con @tool, esquema y docstring
+    buscar_pedidos y obtener_pedido
+[OK] LLM real vinculado en la corrida con API
+    demo.py instancia ChatOpenAI; build_graph hace bind_tools
+[OK] Sin secretos en el ejemplo de entorno
+    .env.example solo tiene el placeholder
+[OK] Dependencias del grafo y del checkpointer
+    requirements.txt
+[OK] README explica entorno, thread_id y traza
+    README.md
+[OK] La base del cliente 102 suma 3 pedidos y $14.500
+    ultimo=PED-102-3 total=$14.500
+[OK] Un cliente inexistente vuelve como error, no como excepción
+    No hay pedidos para el cliente 999. Confirmá el identificador antes de reintentar.
+[OK] El detalle del último pedido trae el producto
+    PED-102-3
+[OK] La ventana de contexto no corta un par herramienta
+    recent_messages retrocede si el corte cae en un ToolMessage
+[OK] Un turno llama herramientas dos veces antes de cerrar
+    buscar_pedidos -> obtener_pedido
+[OK] La respuesta usa el total y el producto devueltos por la base
+    El cliente 102 tuvo 3 pedidos por un total de $14.500. En el último, PED-102-3, se compró Notebook 14 pulgadas.
+[OK] El mismo thread_id recuerda el cliente y busca el primer pedido
+    El primer pedido PED-102-1 es del cliente 102 e incluye Teclado mecánico, por $2.000.
+[OK] Otro thread_id no hereda la sesión y pide el cliente
+    ¿De qué cliente? Necesito el identificador numérico.
+[OK] Un error de la herramienta vuelve al agente, que pide una aclaración
+    No hay pedidos para el cliente 999. Pasame otro identificador si querés que vuelva a buscar.
+[OK] Un argumento inválido se reintenta en el ciclo, sin if/else de ruteo
+    [{'cliente_id': 0}, {'cliente_id': 102}]
+[OK] Sqlite guarda los thread_id por separado
+    sesion-102, sesion-999, sesion-reintento, sesion-vacia
+
+Resultado: 20/20

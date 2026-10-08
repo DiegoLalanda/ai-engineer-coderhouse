@@ -1,0 +1,41 @@
+modelo: ensayo-determinista
+recursion_limit: 10
+generador: verificar_rubrica.py
+
+## razonamiento multi-paso  thread_id=sesion-102
+herramientas_invocadas: 2
+Usuario: ¿Cuántos pedidos tuvo el cliente 102, cuál fue el total y qué se compró en el último?
+-> buscar_pedidos({"cliente_id": 102})
+<- buscar_pedidos: {"cliente_id": 102, "pedidos": 3, "total": 14500, "total_texto": "$14.500", "moneda": "ARS", "primer_pedido_id": "PED-102-1", "ultimo_pedido_id": "PED-102-3", "pedido_ids": ["PED-102-1", "PED-102-2", "PED-102-3"], "productos": null, "completo": false, "nota": "Información incompleta para listar productos. Llamá a obtener_pedido con un pedido_id de esta respuesta. No inventes el identificador."}
+-> obtener_pedido({"pedido_id": "PED-102-3"})
+<- obtener_pedido: {"pedido_id": "PED-102-3", "cliente_id": 102, "fecha": "2025-09-01", "total": 8000, "total_texto": "$8.000", "moneda": "ARS", "productos": [{"producto": "Notebook 14 pulgadas", "cantidad": 1}], "completo": true}
+Respuesta: El cliente 102 tuvo 3 pedidos por un total de $14.500. En el último, PED-102-3, se compró Notebook 14 pulgadas.
+
+## misma sesion  thread_id=sesion-102
+herramientas_invocadas: 1
+Usuario: ¿y el primero?
+-> obtener_pedido({"pedido_id": "PED-102-1"})
+<- obtener_pedido: {"pedido_id": "PED-102-1", "cliente_id": 102, "fecha": "2025-03-02", "total": 2000, "total_texto": "$2.000", "moneda": "ARS", "productos": [{"producto": "Teclado mecánico", "cantidad": 1}], "completo": true}
+Respuesta: El primer pedido PED-102-1 es del cliente 102 e incluye Teclado mecánico, por $2.000.
+
+## otra sesion  thread_id=sesion-vacia
+herramientas_invocadas: 0
+Usuario: ¿y el último?
+Respuesta: ¿De qué cliente? Necesito el identificador numérico.
+
+## error y aclaracion  thread_id=sesion-999
+herramientas_invocadas: 1
+Usuario: ¿Cuántos pedidos tuvo el cliente 999 y cuál fue el total?
+-> buscar_pedidos({"cliente_id": 999})
+<- buscar_pedidos: {"error": "No hay pedidos para el cliente 999. Confirmá el identificador antes de reintentar.", "completo": false}
+Respuesta: No hay pedidos para el cliente 999. Pasame otro identificador si querés que vuelva a buscar.
+
+## reintento tras dato invalido  thread_id=sesion-reintento
+herramientas_invocadas: 2
+Usuario: ¿Cuántos pedidos tuvo el cliente 102 y cuál fue el total?
+-> buscar_pedidos({"cliente_id": 0})
+<- buscar_pedidos: Error: ToolInvocationError("Error invoking tool 'buscar_pedidos' with kwargs {'cliente_id': 0} with error:\n cliente_id: Input should be greater than 0\n Please fix the error and try again.")
+ Please fix your mistakes.
+-> buscar_pedidos({"cliente_id": 102})
+<- buscar_pedidos: {"cliente_id": 102, "pedidos": 3, "total": 14500, "total_texto": "$14.500", "moneda": "ARS", "primer_pedido_id": "PED-102-1", "ultimo_pedido_id": "PED-102-3", "pedido_ids": ["PED-102-1", "PED-102-2", "PED-102-3"], "productos": null, "completo": false, "nota": "Información incompleta para listar productos. Llamá a obtener_pedido con un pedido_id de esta respuesta. No inventes el identificador."}
+Respuesta: El cliente 102 tuvo 3 pedidos por un total de $14.500.
