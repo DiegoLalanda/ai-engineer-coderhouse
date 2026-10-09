@@ -18,8 +18,9 @@ Cada unidad vive en su propia carpeta, con su `README.md` y sus dependencias. El
 | [pre-entrega-4-rag-pinecone](./pre-entrega-4-rag-pinecone) | 4 · RAG en la nube | Pre-entrega | Índice Pinecone serverless, recuperador híbrido BM25 + vectores y evaluación Precision@5 / Recall@5. |
 | [pre-entrega-5-agente-react](./pre-entrega-5-agente-react) | 5 · Agentes | Pre-entrega | Agente ReAct asíncrono, herramientas sobre SQLite y memoria con `AsyncSqliteSaver` + `thread_id`. |
 | [pre-entrega-6-orquestador-multiagente](./pre-entrega-6-orquestador-multiagente) | 6 · Multi-agente | Pre-entrega | Supervisor jerárquico, investigador y analista con estado compartido y corte por pasos. |
+| [pre-entrega-7-intelligence-system](./pre-entrega-7-intelligence-system) | 7 y 8 · API y entrega final | Pre-entrega | Sistema de inteligencia: RAG híbrido, supervisor, aprobación humana, API con Redis y trazas. |
 
-Las próximas pre-entregas (LangChain, RAG, agentes, multi-agente, API de producción y el capstone) se irán sumando como carpetas hermanas, sin mezclar código entre actividades.
+Las entregas viven en carpetas hermanas. La pre-entrega 7 ensambla el RAG, el supervisor y la API. No importa código de las carpetas anteriores.
 
 ## Entregas puntuales
 
@@ -33,6 +34,7 @@ Si un corrector necesita **solo** una actividad, puede entrar directo a su carpe
 - Pre-entrega 4 — RAG en Pinecone: [pre-entrega-4-rag-pinecone](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-4-rag-pinecone)
 - Pre-entrega 5 — Agente ReAct: [pre-entrega-5-agente-react](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-5-agente-react)
 - Pre-entrega 6 — Orquestador multi-agente: [pre-entrega-6-orquestador-multiagente](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-6-orquestador-multiagente)
+- Pre-entrega 7 — Sistema de inteligencia: [pre-entrega-7-intelligence-system](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-7-intelligence-system)
 
 La explicación de cómo correr cada una (variables de entorno, dependencias, comando de prueba) está en el `README.md` de esa carpeta. No hay informe aparte.
 
@@ -120,6 +122,17 @@ copy .env.example .env
 python verificar_rubrica.py
 python main.py
 ```
+
+Para la pre-entrega 7 (sistema de inteligencia):
+
+```powershell
+pip install -r pre-entrega-7-intelligence-system\requirements.txt
+cd pre-entrega-7-intelligence-system
+copy .env.example .env
+python verificar_rubrica.py
+```
+
+Con Docker, desde esa carpeta: `.\run.ps1`.
 
 ## Autor
 

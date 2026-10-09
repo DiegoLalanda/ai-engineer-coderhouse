@@ -1,0 +1,40 @@
+[OK] Python 3.12 o superior — 3.12.10
+[OK] La API valida la entrada con Pydantic — POST /tasks y GET /tasks/{id}
+[OK] Las herramientas declaran args_schema — buscar_conocimiento, buscar_resenas, obtener_resena, calcular_sentimiento
+[OK] El estado y los artefactos son modelos Pydantic — ResearchArtifact, AnalysisArtifact, TareaEntrada
+[OK] La comunicación del worker y las búsquedas es async — async def loop, buscar_fichas; sin requests
+[OK] El estado se escribe antes de encolar — jobs.crear: SET status y después RPUSH
+[OK] El grafo tiene supervisor, especialistas y aprobación — START -> supervisor -> Investigador | Analista | Aprobacion | END
+[OK] Cada especialista es un create_react_agent — investigador y analista
+[OK] La acción crítica usa interrupt y el checkpointer puede ser Redis — hitl.interrupt; AsyncRedisSaver.asetup
+[OK] El conocimiento combina vector y léxico — Chroma + RRF
+[OK] El README documenta el grafo y el arranque — mermaid, docker compose, thread_id
+[OK] El despliegue local es una sola instrucción y usa Python 3.12 — Dockerfile y docker-compose.yml
+[OK] El modelo, Redis y Phoenix salen de variables de entorno — .env.example
+[OK] requirements declara el runtime — requirements.txt
+[OK] Una búsqueda sin fichas no inventa reseñas — 0
+[OK] Pydantic rechaza un score fuera de 0 a 1 — score=2
+[OK] Pydantic rechaza una investigación sin consulta — consulta vacía
+[OK] Un alta deja el estado pending antes del RPUSH — set rpush
+[OK] El checkpointer conserva el hilo después de cerrar el grafo — task_completed=True mensajes=4
+[OK] Una consulta vacía responde 422 — 422
+[OK] Un id desconocido responde 404 — 404
+[OK] El healthcheck responde 200 — {"status":"ok"}
+[OK] Cinco altas concurrentes responden 202 con job_id — 202 202 202 202 202
+[OK] La Notebook 14 queda en aprobación con score 0.89 y 3 reseñas — {'pregunta': '¿Publicar Notebook 14 como destacado?', 'producto': 'Notebook 14', 'score': 0.89, 'muestra': 3}
+[OK] Los auriculares se cierran sin destacar — Síntesis: Auriculares queda con sentimiento negativo y score 0.00 sobre 1 reseñas. No se destaca. Política: 03-resenas.md, 01-destacados.md.
+[OK] La pregunta de política cita conocimiento y no inventa reseñas — Síntesis: no hay reseñas para puntuar. Políticas consultadas: 01-destacados.md, 03-resenas.md. Fragmentos: # Política de destacados
+
+Un producto se publica como destacado en la home solo si el sentimiento promedio de sus reseñas es de al menos 0.7 y hay al menos 2 reseñas. La publicació.
+[OK] Un producto inexistente no fabrica fichas — Síntesis: no hay reseñas para puntuar. Políticas consultadas: 01-destacados.md, 03-resenas.md. Fragmentos: # Política de destacados
+
+Un producto se publica como destacado en la home solo si el sentimiento promedio de sus reseñas es de al menos 0.7 y hay al menos 2 reseñas. La publicació.
+[OK] La segunda consulta de la Notebook también espera aprobación — waiting_approval
+[OK] Aprobar un trabajo ya cerrado responde 409 — 409
+[OK] La aprobación se encola y responde 200 — 200 200
+[OK] Un rechazo deja el destacado sin publicar — Síntesis: no se publica el destacado de Notebook 14. El revisor rechazó la acción. Score 0.89.
+[OK] Una aprobación publica el destacado y cita las reseñas — Síntesis: se publica el destacado de Notebook 14. Score 0.89 sobre 3 reseñas (rev-nb-1, rev-nb-2, rev-nb-3). Política: 01-destacados.md, 03-resenas.md.
+[OK] Una excepción del worker marca el trabajo como failed — fallo de prueba
+[OK] El thread_id del trabajo queda en el checkpointer — mensajes=4
+[OK] Hay al menos cinco trazas de tarea con la versión del prompt — tareas=8 spans=171 version=2026-10-09
+[OK] Las trazas también quedan en evidencia/trazas.jsonl — C:\Users\Diego Lalanda\OneDrive\Desktop\Proyectos\ai-engineer-coderhouse\pre-entrega-7-intelligence-system\evidencia\trazas.jsonl

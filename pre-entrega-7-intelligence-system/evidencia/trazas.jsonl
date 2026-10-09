@@ -1,0 +1,171 @@
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 422}, "duracion_ns": 1004400}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 2000100}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/0d01f595-dc44-4ba6-92f0-4e03f7a6f46e", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 404}, "duracion_ns": 2999500}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.health"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.health"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.health"}, "duracion_ns": 0}
+{"nombre": "GET /health", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/health", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/health", "http.response.status_code": 200}, "duracion_ns": 2505900}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 2002900}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 202}, "duracion_ns": 3004400}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 202}, "duracion_ns": 2000100}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 202}, "duracion_ns": 1504100}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 202}, "duracion_ns": 2005800}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 202}, "duracion_ns": 2002400}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/7ed70f47-2516-4877-879f-37d4c904e2dd", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2507100}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/c5232f5f-a979-4ca7-ab7e-03dc6659be42", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 1003600}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/9312723f-3de6-441c-96ba-6b47fa56f48c", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2000000}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/715c51f9-2351-4613-8761-026da1b92509", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 999500}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 1503500}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 1}, "duracion_ns": 0}
+{"nombre": "investigador", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 24028500}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 2}, "duracion_ns": 0}
+{"nombre": "analista", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 16511800}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 3}, "duracion_ns": 508000}
+{"nombre": "aprobacion", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 999400}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "7ed70f47-2516-4877-879f-37d4c904e2dd", "tipo": "start"}, "duracion_ns": 72108400}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 1}, "duracion_ns": 0}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 1000400}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/7ed70f47-2516-4877-879f-37d4c904e2dd", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 3004600}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 998200}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/c5232f5f-a979-4ca7-ab7e-03dc6659be42", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 1999000}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 999200}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2504100}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/9312723f-3de6-441c-96ba-6b47fa56f48c", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2194600}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/715c51f9-2351-4613-8761-026da1b92509", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2000000}
+{"nombre": "investigador", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 38235600}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 2}, "duracion_ns": 0}
+{"nombre": "analista", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 16024700}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 3}, "duracion_ns": 1000800}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "c5232f5f-a979-4ca7-ab7e-03dc6659be42", "tipo": "start"}, "duracion_ns": 71292600}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 1}, "duracion_ns": 0}
+{"nombre": "investigador", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 25032500}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 2}, "duracion_ns": 1003000}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "9312723f-3de6-441c-96ba-6b47fa56f48c", "tipo": "start"}, "duracion_ns": 36050000}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 1}, "duracion_ns": 0}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/c5232f5f-a979-4ca7-ab7e-03dc6659be42", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 1999200}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/9312723f-3de6-441c-96ba-6b47fa56f48c", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 999200}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2090200}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 998600}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/715c51f9-2351-4613-8761-026da1b92509", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 998600}
+{"nombre": "investigador", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 34613100}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 2}, "duracion_ns": 1503200}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "715c51f9-2351-4613-8761-026da1b92509", "tipo": "start"}, "duracion_ns": 47640600}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 1}, "duracion_ns": 0}
+{"nombre": "investigador", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 25045700}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 2}, "duracion_ns": 0}
+{"nombre": "analista", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 17023100}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 3}, "duracion_ns": 998800}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 1507300}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/715c51f9-2351-4613-8761-026da1b92509", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2000500}
+{"nombre": "aprobacion", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 1000500}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "cb15c36e-122e-4af9-9d90-f868f5d384fb", "tipo": "start"}, "duracion_ns": 66109500}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2998000}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 503200}
+{"nombre": "POST /tasks/{job_id}/approve", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/c5232f5f-a979-4ca7-ab7e-03dc6659be42/approve", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}/approve", "http.response.status_code": 409}, "duracion_ns": 1501700}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 998500}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 1998700}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 0}
+{"nombre": "POST /tasks/{job_id}/approve", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/7ed70f47-2516-4877-879f-37d4c904e2dd/approve", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}/approve", "http.response.status_code": 200}, "duracion_ns": 5998900}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 1000100}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.aprobar"}, "duracion_ns": 0}
+{"nombre": "POST /tasks/{job_id}/approve", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb/approve", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}/approve", "http.response.status_code": 200}, "duracion_ns": 70381200}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/7ed70f47-2516-4877-879f-37d4c904e2dd", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2003800}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 997700}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 1997200}
+{"nombre": "aprobacion", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 0}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 4}, "duracion_ns": 1005300}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "7ed70f47-2516-4877-879f-37d4c904e2dd", "tipo": "resume"}, "duracion_ns": 11517000}
+{"nombre": "aprobacion", "atributos": {"prompt.version": "2026-10-09"}, "duracion_ns": 0}
+{"nombre": "supervisor", "atributos": {"prompt.version": "2026-10-09", "pasos": 4}, "duracion_ns": 997700}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "cb15c36e-122e-4af9-9d90-f868f5d384fb", "tipo": "resume"}, "duracion_ns": 11013100}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 998400}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/7ed70f47-2516-4877-879f-37d4c904e2dd", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 3001700}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/cb15c36e-122e-4af9-9d90-f868f5d384fb", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 3010100}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 999800}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.crear_tarea"}, "duracion_ns": 0}
+{"nombre": "POST /tasks", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks", "url.scheme": "http", "http.request.method": "POST", "network.protocol.version": "1.1", "http.route": "/tasks", "http.response.status_code": 202}, "duracion_ns": 3000200}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/9d837092-ac0c-4847-bed8-51a08642aedd", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 3522500}
+{"nombre": "tarea", "atributos": {"prompt.version": "2026-10-09", "job_id": "9d837092-ac0c-4847-bed8-51a08642aedd", "tipo": "start"}, "duracion_ns": 2997500}
+{"nombre": "fastapi.dependencies", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.endpoint", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "fastapi.serialization", "atributos": {"code.function.name": "app.main.create_app.<locals>.leer_tarea"}, "duracion_ns": 0}
+{"nombre": "GET /tasks/{job_id}", "atributos": {"server.address": "test", "server.port": 80, "url.path": "/tasks/9d837092-ac0c-4847-bed8-51a08642aedd", "url.scheme": "http", "http.request.method": "GET", "network.protocol.version": "1.1", "http.route": "/tasks/{job_id}", "http.response.status_code": 200}, "duracion_ns": 2999900}
