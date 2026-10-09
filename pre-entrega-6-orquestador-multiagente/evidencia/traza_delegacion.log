@@ -1,0 +1,31 @@
+modelo: ensayo-determinista
+generador: verificar_rubrica.py
+pasos: 5
+task_completed: True
+recursion_limit: 30
+
+Pedido: Investigá las reseñas de la Notebook 14. En la primera lectura buscá solo la batería. Si no hay al menos 2 reseñas, ampliá al producto completo y decime si el sentimiento promedio alcanza para destacarla. El umbral es 0.7.
+
+Usuario: Investigá las reseñas de la Notebook 14. En la primera lectura buscá solo la batería. Si no hay al menos 2 reseñas, ampliá al producto completo y decime si el sentimiento promedio alcanza para destacarla. El umbral es 0.7.
+Supervisor: Investigador
+-> buscar_resenas({"consulta": "batería"})
+<- buscar_resenas: {"consulta": "batería", "resultados": [{"id": "rev-nb-1", "producto": "Notebook 14", "texto": "La notebook es rápida y la batería dura todo el día. La recomiendo."}], "muestra": 1, "confidence": 0.45}
+Investigador: Investigación: consulta=batería, producto=Notebook 14, muestra=1, confidence=0.45, fuentes=rev-nb-1.
+Supervisor: Analista
+-> calcular_sentimiento({"producto": "Notebook 14", "textos": ["La notebook es rápida y la batería dura todo el día. La recomiendo."], "umbral": 0.7, "minimo_resenas": 2})
+<- calcular_sentimiento: {"producto": "Notebook 14", "score": 1.0, "muestra": 1, "sentimiento": "positivo", "suficiente": false, "destacar": false}
+Analista: Análisis: producto=Notebook 14, score=1.0, muestra=1, sentimiento=positivo, suficiente=false, destacar=false.
+Supervisor: Investigador
+-> buscar_resenas({"consulta": "Notebook 14"})
+<- buscar_resenas: {"consulta": "Notebook 14", "resultados": [{"id": "rev-nb-1", "producto": "Notebook 14", "texto": "La notebook es rápida y la batería dura todo el día. La recomiendo."}, {"id": "rev-nb-2", "producto": "Notebook 14", "texto": "Excelente equipo, el teclado es cómodo y la pantalla se ve muy bien."}, {"id": "rev-nb-3", "producto": "Notebook 14", "texto": "Llegó un día tarde, pero la notebook funciona bárbaro y la volvería a comprar."}], "muestra": 3, "confidence": 0.9}
+-> obtener_resena({"resena_id": "rev-nb-1"})
+<- obtener_resena: {"id": "rev-nb-1", "producto": "Notebook 14", "texto": "La notebook es rápida y la batería dura todo el día. La recomiendo."}
+Investigador: Investigación: consulta=Notebook 14, producto=Notebook 14, muestra=3, confidence=0.9, fuentes=rev-nb-1, rev-nb-2, rev-nb-3.
+Supervisor: Analista
+-> calcular_sentimiento({"producto": "Notebook 14", "textos": ["La notebook es rápida y la batería dura todo el día. La recomiendo.", "Excelente equipo, el teclado es cómodo y la pantalla se ve muy bien.", "Llegó un día tarde, pero la notebook funciona bárbaro y la volvería a comprar."], "umbral": 0.7, "minimo_resenas": 2})
+<- calcular_sentimiento: {"producto": "Notebook 14", "score": 0.89, "muestra": 3, "sentimiento": "positivo", "suficiente": true, "destacar": true}
+Analista: Análisis: producto=Notebook 14, score=0.89, muestra=3, sentimiento=positivo, suficiente=true, destacar=true.
+Supervisor: Síntesis: Notebook 14 tiene 3 reseñas (rev-nb-1, rev-nb-2, rev-nb-3). Sentimiento positivo con score 0.89. Umbral 0.70: conviene destacarla.
+
+research: {"consulta": "Notebook 14", "producto": "Notebook 14", "findings": ["La notebook es rápida y la batería dura todo el día. La recomiendo.", "Excelente equipo, el teclado es cómodo y la pantalla se ve muy bien.", "Llegó un día tarde, pero la notebook funciona bárbaro y la volvería a comprar."], "fuentes": ["rev-nb-1", "rev-nb-2", "rev-nb-3"], "muestra": 3, "confidence": 0.9}
+analysis: {"producto": "Notebook 14", "score": 0.89, "muestra": 3, "sentimiento": "positivo", "destacar": true, "suficiente": true}

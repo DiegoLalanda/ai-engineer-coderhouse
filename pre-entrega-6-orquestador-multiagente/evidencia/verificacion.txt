@@ -1,0 +1,53 @@
+Verificación local de la pre-entrega 6
+
+[OK] Estado hereda de MessagesState y acumula con add_messages
+    AgentState(MessagesState); messages usa add_messages
+[OK] La clase AgentState declara la herencia en el fuente
+    class AgentState(MessagesState)
+[OK] El estado separa next, parcelas, pasos y cierre
+    next, research, analysis, steps, task_completed
+[OK] Los artefactos validan score y textos con Pydantic
+    ResearchArtifact.findings y confidence; AnalysisArtifact.score
+[OK] Grafo con supervisor, especialistas y arista condicional tipada
+    START -> supervisor -> Investigador | Analista | END
+[OK] Cada especialista es un create_react_agent con sus herramientas
+    agents/research_agent.py y agents/analyst_agent.py
+[OK] El investigador no escribe analysis y el analista no escribe research
+    cada nodo retorna solo su parcela
+[OK] Las fichas se leen en paralelo
+    buscar_resenas usa asyncio.gather
+[OK] Un artefacto inválido se loguea y no se inyecta
+    warning + parcela ausente
+[OK] El supervisor tiene rúbrica, tope de pasos y síntesis
+    prompt de rúbrica y corte por pasos
+[OK] Los briefs no arrastran el historial completo
+    cada rol recibe su recorte
+[OK] Sin secretos en el ejemplo de entorno
+    .env.example solo tiene el placeholder
+[OK] Dependencias del grafo
+    requirements.txt
+[OK] README explica la topología, el diagrama y la corrida
+    README.md
+[OK] El supervisor manda a investigar, analizar, refinar y cerrar
+    Investigador -> Analista -> Investigador -> Analista
+[OK] La primera búsqueda es estrecha y la segunda abre el producto
+    buscar_resenas -> calcular_sentimiento -> buscar_resenas -> obtener_resena -> calcular_sentimiento
+[OK] La investigación final junta las tres reseñas del producto
+    rev-nb-1, rev-nb-2, rev-nb-3
+[OK] El análisis usa el score de la herramienta y alcanza el umbral
+    score=0.89 pasos=5
+[OK] La síntesis cita la parcela y no inventa otro producto
+    Síntesis: Notebook 14 tiene 3 reseñas (rev-nb-1, rev-nb-2, rev-nb-3). Sentimiento positivo con score 0.89. Umbral 0.70: conviene destacarla.
+[OK] Un supervisor que no corta igual frena en el tope
+    steps=7 completed=False
+[OK] El grafo compilado tiene las tres salidas del supervisor
+    evidencia/grafo.mmd
+[OK] Un score fuera de rango no entra al estado y queda en el log
+    Analista: artefacto inválido: 1 validation error for AnalysisArtifact
+score
+  Input should be less than or equal to 1 [type=less_than_equal, input_value=2, input_type=int]
+    For further information visit https://errors.pydantic.dev/2.13/v/less_than_equal
+[OK] Una búsqueda vacía no fabrica reseñas
+    Ninguna ficha coincide con 'producto-inexistente'.
+
+Resultado: 23/23

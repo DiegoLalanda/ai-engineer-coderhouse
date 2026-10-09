@@ -1,0 +1,161 @@
+{
+  "modelo": "ensayo-determinista",
+  "generador": "verificar_rubrica.py",
+  "pedido": "Investigá las reseñas de la Notebook 14. En la primera lectura buscá solo la batería. Si no hay al menos 2 reseñas, ampliá al producto completo y decime si el sentimiento promedio alcanza para destacarla. El umbral es 0.7.",
+  "recursion_limit": 30,
+  "steps": 5,
+  "next": "FINALIZAR",
+  "task_completed": true,
+  "research": {
+    "consulta": "Notebook 14",
+    "producto": "Notebook 14",
+    "findings": [
+      "La notebook es rápida y la batería dura todo el día. La recomiendo.",
+      "Excelente equipo, el teclado es cómodo y la pantalla se ve muy bien.",
+      "Llegó un día tarde, pero la notebook funciona bárbaro y la volvería a comprar."
+    ],
+    "fuentes": [
+      "rev-nb-1",
+      "rev-nb-2",
+      "rev-nb-3"
+    ],
+    "muestra": 3,
+    "confidence": 0.9
+  },
+  "analysis": {
+    "producto": "Notebook 14",
+    "score": 0.89,
+    "muestra": 3,
+    "sentimiento": "positivo",
+    "destacar": true,
+    "suficiente": true
+  },
+  "eventos": [
+    {
+      "tipo": "human",
+      "content": "Investigá las reseñas de la Notebook 14. En la primera lectura buscá solo la batería. Si no hay al menos 2 reseñas, ampliá al producto completo y decime si el sentimiento promedio alcanza para destacarla. El umbral es 0.7."
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Supervisor",
+      "content": "Investigador"
+    },
+    {
+      "tipo": "tool_call",
+      "nombre": "buscar_resenas",
+      "args": {
+        "consulta": "batería"
+      },
+      "id": "call-buscar-batería"
+    },
+    {
+      "tipo": "tool_result",
+      "nombre": "buscar_resenas",
+      "content": "{\"consulta\": \"batería\", \"resultados\": [{\"id\": \"rev-nb-1\", \"producto\": \"Notebook 14\", \"texto\": \"La notebook es rápida y la batería dura todo el día. La recomiendo.\"}], \"muestra\": 1, \"confidence\": 0.45}"
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Investigador",
+      "content": "Investigación: consulta=batería, producto=Notebook 14, muestra=1, confidence=0.45, fuentes=rev-nb-1."
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Supervisor",
+      "content": "Analista"
+    },
+    {
+      "tipo": "tool_call",
+      "nombre": "calcular_sentimiento",
+      "args": {
+        "producto": "Notebook 14",
+        "textos": [
+          "La notebook es rápida y la batería dura todo el día. La recomiendo."
+        ],
+        "umbral": 0.7,
+        "minimo_resenas": 2
+      },
+      "id": "call-sentimiento"
+    },
+    {
+      "tipo": "tool_result",
+      "nombre": "calcular_sentimiento",
+      "content": "{\"producto\": \"Notebook 14\", \"score\": 1.0, \"muestra\": 1, \"sentimiento\": \"positivo\", \"suficiente\": false, \"destacar\": false}"
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Analista",
+      "content": "Análisis: producto=Notebook 14, score=1.0, muestra=1, sentimiento=positivo, suficiente=false, destacar=false."
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Supervisor",
+      "content": "Investigador"
+    },
+    {
+      "tipo": "tool_call",
+      "nombre": "buscar_resenas",
+      "args": {
+        "consulta": "Notebook 14"
+      },
+      "id": "call-buscar-Notebook 14"
+    },
+    {
+      "tipo": "tool_result",
+      "nombre": "buscar_resenas",
+      "content": "{\"consulta\": \"Notebook 14\", \"resultados\": [{\"id\": \"rev-nb-1\", \"producto\": \"Notebook 14\", \"texto\": \"La notebook es rápida y la batería dura todo el día. La recomiendo.\"}, {\"id\": \"rev-nb-2\", \"producto\": \"Notebook 14\", \"texto\": \"Excelente equipo, el teclado es cómodo y la pantalla se ve muy bien.\"}, {\"id\": \"rev-nb-3\", \"producto\": \"Notebook 14\", \"texto\": \"Llegó un día tarde, pero la notebook funciona bárbaro y la volvería a comprar.\"}], \"muestra\": 3, \"confidence\": 0.9}"
+    },
+    {
+      "tipo": "tool_call",
+      "nombre": "obtener_resena",
+      "args": {
+        "resena_id": "rev-nb-1"
+      },
+      "id": "call-obtener"
+    },
+    {
+      "tipo": "tool_result",
+      "nombre": "obtener_resena",
+      "content": "{\"id\": \"rev-nb-1\", \"producto\": \"Notebook 14\", \"texto\": \"La notebook es rápida y la batería dura todo el día. La recomiendo.\"}"
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Investigador",
+      "content": "Investigación: consulta=Notebook 14, producto=Notebook 14, muestra=3, confidence=0.9, fuentes=rev-nb-1, rev-nb-2, rev-nb-3."
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Supervisor",
+      "content": "Analista"
+    },
+    {
+      "tipo": "tool_call",
+      "nombre": "calcular_sentimiento",
+      "args": {
+        "producto": "Notebook 14",
+        "textos": [
+          "La notebook es rápida y la batería dura todo el día. La recomiendo.",
+          "Excelente equipo, el teclado es cómodo y la pantalla se ve muy bien.",
+          "Llegó un día tarde, pero la notebook funciona bárbaro y la volvería a comprar."
+        ],
+        "umbral": 0.7,
+        "minimo_resenas": 2
+      },
+      "id": "call-sentimiento"
+    },
+    {
+      "tipo": "tool_result",
+      "nombre": "calcular_sentimiento",
+      "content": "{\"producto\": \"Notebook 14\", \"score\": 0.89, \"muestra\": 3, \"sentimiento\": \"positivo\", \"suficiente\": true, \"destacar\": true}"
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Analista",
+      "content": "Análisis: producto=Notebook 14, score=0.89, muestra=3, sentimiento=positivo, suficiente=true, destacar=true."
+    },
+    {
+      "tipo": "agente",
+      "nombre": "Supervisor",
+      "content": "Síntesis: Notebook 14 tiene 3 reseñas (rev-nb-1, rev-nb-2, rev-nb-3). Sentimiento positivo con score 0.89. Umbral 0.70: conviene destacarla."
+    }
+  ]
+}
