@@ -1,0 +1,37 @@
+services:
+  redis:
+    image: redis/redis-stack-server:7.4.0-v1
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    ports:
+      - "6006:6006"
+      - "4317:4317"
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4o-mini}
+      PROMPT_TEMPLATE_VERSION: ${PROMPT_TEMPLATE_VERSION:-2026-10-09}
+      CHECKPOINT_BACKEND: redis
+      REDIS_URL: redis://redis:6379/0
+      PHOENIX_COLLECTOR_ENDPOINT: http://phoenix:6006/v1/traces
+      PHOENIX_PROJECT_NAME: api-agente
+      FORCE_ENSAYO: ${FORCE_ENSAYO:-0}
+      MAX_STEPS: ${MAX_STEPS:-8}
+      RECURSION_LIMIT: ${RECURSION_LIMIT:-30}
+    depends_on:
+      redis:
+        condition: service_healthy
+      phoenix:
+        condition: service_started

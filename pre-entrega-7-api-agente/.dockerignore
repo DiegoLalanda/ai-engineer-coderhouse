@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+data/*.sqlite
+data/*.sqlite-*
+evidencia/trazas.jsonl
+evidencia/publicaciones.jsonl
