@@ -1,0 +1,25 @@
+[OK] Python 3.12 o superior — 3.12.10
+[OK] POST /tasks encola y responde 202 sin correr el grafo — main.crear_tarea
+[OK] El estado se escribe en Redis antes del RPUSH — jobs.crear
+[OK] Una excepción del worker pasa el trabajo a failed — worker.procesar
+[OK] Los checkpoints de producción usan AsyncRedisSaver — checkpointer.py y graph.compile
+[OK] La publicación crítica usa interrupt y el efecto queda después — hitl.nodo_aprobacion
+[OK] Hay trazas por nodo y un instrumentador de LangChain — observability.py
+[OK] El README explica Redis, las 5 peticiones y las capturas — README.md
+[OK] El investigador recupera políticas con RAG híbrido y sin un índice fijo — Chroma + RRF, colección por entorno
+[OK] Redis, el modelo y Phoenix salen del entorno — .env.example
+[OK] requirements y compose cubren la API, Redis Stack y Phoenix — requirements.txt y docker-compose.yml
+[OK] Los endpoints y el worker son async y no usan requests — main.py y worker.py
+[OK] Un alta deja pending antes del RPUSH — set rpush
+[OK] El checkpointer conserva el hilo después de cerrar el grafo — next=('Aprobacion',) research=True
+[OK] Una consulta vacía responde 422 — 422
+[OK] Un id desconocido responde 404 — 404
+[OK] Cinco altas concurrentes responden 202 con job_id — 202 202 202 202 202
+[OK] Las cinco corridas pausan la publicación con score 0.89 — {'pregunta': '¿Publicar Notebook 14 como destacado?', 'producto': 'Notebook 14', 'score': 0.89, 'muestra': 3, 'accion': 'publicar_destacado'}
+[OK] La aprobación se encola y el POST no corre el grafo — 200 200
+[OK] Un rechazo no publica el destacado — Síntesis: no se publica el destacado de Notebook 14. El revisor rechazó la acción. Score 0.89. Política: 01-destacados.md.
+[OK] Una aprobación ejecuta publicar_destacado y cierra en done — Síntesis: se publica el destacado de Notebook 14. Score 0.89 sobre 3 reseñas (rev-nb-1, rev-nb-2, rev-nb-3). Política: 01-destacados.md.
+[OK] Aprobar un trabajo ya cerrado responde 409 — 409
+[OK] Una excepción del worker marca failed — fallo de prueba
+[OK] Hay al menos cinco trazas y un tramo por nodo del grafo — tareas=8 nodos=['Analista', 'Aprobacion', 'GET /tasks/{job_id}', 'Investigador', 'LangGraph', 'ModeloEnsayo', 'POST /tasks', 'POST /tasks/{job_id}/approve', 'Prompt', 'RunnableSequence', 'agent', 'buscar_conocimiento', 'buscar_resenas', 'calcular_sentimiento', 'call_model', 'elegir_siguiente', 'fastapi.dependencies', 'fastapi.endpoint', 'fastapi.serialization', 'obtener_resena', 'should_continue', 'supervisor', 'tarea', 'tools']
+[OK] Las trazas quedan en evidencia/trazas.jsonl — C:\Users\Diego Lalanda\OneDrive\Desktop\Proyectos\ai-engineer-coderhouse\entrega-final-intelligence-system\evidencia\trazas.jsonl

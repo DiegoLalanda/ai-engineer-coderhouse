@@ -19,8 +19,9 @@ Cada unidad vive en su propia carpeta, con su `README.md` y sus dependencias. El
 | [pre-entrega-5-agente-react](./pre-entrega-5-agente-react) | 5 · Agentes | Pre-entrega | Agente ReAct asíncrono, herramientas sobre SQLite y memoria con `AsyncSqliteSaver` + `thread_id`. |
 | [pre-entrega-6-orquestador-multiagente](./pre-entrega-6-orquestador-multiagente) | 6 · Multi-agente | Pre-entrega | Supervisor jerárquico, investigador y analista con estado compartido y corte por pasos. |
 | [pre-entrega-7-api-agente](./pre-entrega-7-api-agente) | 7 · API de producción | Pre-entrega | FastAPI asíncrona del orquestador, Redis, Phoenix y aprobación humana. |
+| [entrega-final-intelligence-system](./entrega-final-intelligence-system) | 8 · Entrega final | Entrega final | RAG híbrido, supervisor, API con Redis y trazas en un solo sistema. |
 
-Las entregas viven en carpetas hermanas. La pre-entrega 7 expone el orquestador del módulo 6 detrás de una API. No importa código de las carpetas anteriores.
+Las entregas viven en carpetas hermanas. La entrega final junta el RAG, el supervisor del módulo 6 y la API del módulo 7. No importa código de las carpetas anteriores.
 
 ## Entregas puntuales
 
@@ -35,6 +36,7 @@ Si un corrector necesita **solo** una actividad, puede entrar directo a su carpe
 - Pre-entrega 5 — Agente ReAct: [pre-entrega-5-agente-react](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-5-agente-react)
 - Pre-entrega 6 — Orquestador multi-agente: [pre-entrega-6-orquestador-multiagente](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-6-orquestador-multiagente)
 - Pre-entrega 7 — API de producción: [pre-entrega-7-api-agente](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/pre-entrega-7-api-agente)
+- Entrega final — Intelligence System: [entrega-final-intelligence-system](https://github.com/DiegoLalanda/ai-engineer-coderhouse/tree/main/entrega-final-intelligence-system)
 
 La explicación de cómo correr cada una (variables de entorno, dependencias, comando de prueba) está en el `README.md` de esa carpeta. No hay informe aparte.
 
@@ -128,6 +130,16 @@ Para la pre-entrega 7 (API de producción):
 ```powershell
 pip install -r pre-entrega-7-api-agente\requirements.txt
 cd pre-entrega-7-api-agente
+python verificar_rubrica.py
+```
+
+Con Docker, desde esa carpeta: `copy .env.example .env` y `.\run.ps1`.
+
+Para la entrega final (Intelligence System):
+
+```powershell
+pip install -r entrega-final-intelligence-system\requirements.txt
+cd entrega-final-intelligence-system
 python verificar_rubrica.py
 ```
 
